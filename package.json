@@ -1,0 +1,19 @@
+{
+  "name": "laabhum-kodak-neo-nodejs",
+  "version": "1.0.0",
+  "description": "laabhum kodak neo sdk ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tradesavvy/laabhum-kodak-neo-nodejs.git"
+  },
+  "author": "laabhum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tradesavvy/laabhum-kodak-neo-nodejs/issues"
+  },
+  "homepage": "https://github.com/tradesavvy/laabhum-kodak-neo-nodejs#readme"
+}
