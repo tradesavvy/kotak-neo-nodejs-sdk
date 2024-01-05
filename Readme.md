@@ -57,4 +57,4 @@ If you have already generated access token and already logged in client
 
 ## License
 
-[Laabhum Private Limited](https://laabhum.com/) (c) 2022. Licensed under the ISC License.
+[Laabhum Private Limited](https://laabhum.com/) (c) 2024. Licensed under the ISC License.
