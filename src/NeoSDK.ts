@@ -38,11 +38,7 @@ export default class NeoSDK {
     async generateAccessToken(params: type.generateAccessToken) {
         let request = {
             url: this.accessTokenUrl,
-            body: {
-                grant_type: "password",
-                username: params.username,
-                password: params.password,
-            },
+            body: {},
             headers: {
                 Authorization: `Basic ${Buffer.from(
                     `${params.customer_key}:${params.customer_secret}`
