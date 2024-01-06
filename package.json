@@ -1,6 +1,6 @@
 {
   "name": "kotak-neo-nodejs-sdk",
-  "version": "1.0.8",
+  "version": "1.0.13",
   "description": "TS client library for Kotak Neo Trade API",
   "main": "./build/index.js",
   "scripts": {
