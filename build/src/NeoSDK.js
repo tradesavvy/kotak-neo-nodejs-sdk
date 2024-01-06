@@ -133,13 +133,9 @@ var NeoSDK = (function () {
                     case 0:
                         request = {
                             url: this.accessTokenUrl,
-                            body: {
-                                grant_type: "password",
-                                username: params.username,
-                                password: params.password
-                            },
+                            body: {},
                             headers: {
-                                Authorization: "Basic ".concat(Buffer.from("".concat(params.customer_key, ":").concat(params.customer_secret)).toString("base64"))
+                                Authorization: "Basic ".concat(window.btoa("".concat(params.customer_key, ":").concat(params.customer_secret)))
                             }
                         };
                         return [4, this.request(request, this.method.post)];
