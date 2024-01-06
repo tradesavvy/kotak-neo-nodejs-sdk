@@ -2,13 +2,13 @@
 
 ## Installation
 ```
-npm i @laabhum/kotak-neo-nodejs-sdk
+npm i kotak-neo-nodejs-sdk
 ```
 
 ## Getting started
 
 ```js
-const { NeoSDK } = require("@laabhum/kotak-neo-nodejs-sdk");
+const { NeoSDK } = require("kotak-neo-nodejs-sdk");
 
 let neo = new NeoSDK();
 
