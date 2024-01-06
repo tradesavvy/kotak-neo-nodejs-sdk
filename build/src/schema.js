@@ -116,8 +116,7 @@ exports.header = joi_1["default"].object({
 });
 exports.login = joi_1["default"].object({
     mobileNumber: joi_1["default"].string().length(13),
-    password: joi_1["default"].string().required(),
-    pan: joi_1["default"].string().length(10)
+    password: joi_1["default"].string().required()
 })
     .without("mobileNumber", "pan")
     .xor("mobileNumber", "pan");

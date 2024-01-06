@@ -44,9 +44,9 @@ export default class NeoSDK {
         password: params.password,
       },
       headers: {
-        Authorization: `Basic ${window.btoa(
+        Authorization: `Basic ${Buffer.from(
           `${params.customer_key}:${params.customer_secret}`
-        )}`,
+        ).toString("base64")}`,
       },
     };
     const response: any = await this.request(request, this.method.post);
@@ -56,6 +56,7 @@ export default class NeoSDK {
   setAccessToken(token: string) {
     this.accessToken = token;
   }
+
   getAccessToken() {
     return this.accessToken;
   }
@@ -63,9 +64,20 @@ export default class NeoSDK {
     ==================================*/
 
   loggedHeaders: any = {};
+
   getLoggedHeaders() {
     return this.loggedHeaders;
   }
+
+  setLoggedOrderHeaders(headers: type.loggerOrderHeaders) {
+    this.loggedHeaders = {
+      ...headers,
+      "Content-Type": "application/json",
+      "neo-fin-key": "neotradeapi",
+      Authorization: this.accessToken,
+    };
+  }
+
   setLoggedHeaders(headers: type.loggedHeaders) {
     const validateValues = schemas.header.validate(headers);
     if (validateValues.error)

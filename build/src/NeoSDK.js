@@ -133,9 +133,13 @@ var NeoSDK = (function () {
                     case 0:
                         request = {
                             url: this.accessTokenUrl,
-                            body: {},
+                            body: {
+                                grant_type: "password",
+                                username: params.username,
+                                password: params.password
+                            },
                             headers: {
-                                Authorization: "Basic ".concat(window.btoa("".concat(params.customer_key, ":").concat(params.customer_secret)))
+                                Authorization: "Basic ".concat(Buffer.from("".concat(params.customer_key, ":").concat(params.customer_secret)).toString("base64"))
                             }
                         };
                         return [4, this.request(request, this.method.post)];
@@ -155,6 +159,9 @@ var NeoSDK = (function () {
     };
     NeoSDK.prototype.getLoggedHeaders = function () {
         return this.loggedHeaders;
+    };
+    NeoSDK.prototype.setLoggedOrderHeaders = function (headers) {
+        this.loggedHeaders = __assign(__assign({}, headers), { "Content-Type": "application/json", "neo-fin-key": "neotradeapi", Authorization: this.accessToken });
     };
     NeoSDK.prototype.setLoggedHeaders = function (headers) {
         var validateValues = schemas.header.validate(headers);

@@ -13,6 +13,10 @@ export type generateAccessToken = {
     customer_key: string;
     customer_secret: string;
 };
+export type loggerOrderHeaders = {
+    Sid: string;
+    Auth: string;
+}
 export type loggedHeaders = {
     serverId: string;
     Sid: string;
