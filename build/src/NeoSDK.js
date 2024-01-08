@@ -259,7 +259,7 @@ var NeoSDK = (function () {
                             throw new Error("Can't set session");
                         this.loggedHeaders.auth = response.data.token;
                         this.loggedHeaders.rid = response.data.rid;
-                        return [2, response.data.token];
+                        return [2, response.data];
                 }
             });
         });

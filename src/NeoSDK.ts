@@ -162,7 +162,7 @@ export default class NeoSDK {
     if (response.status !== 201) throw new Error("Can't set session");
     this.loggedHeaders.auth = response.data.token;
     this.loggedHeaders.rid = response.data.rid;
-    return response.data.token;
+    return response.data;
   }
 
   refreshToken() {
